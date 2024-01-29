@@ -1,18 +1,21 @@
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useCallback, useContext, useState } from 'react';
+import { MoodOptionType, MoodOptionWithTimestamp } from './types';
 
 type AppContextType = {
-  greeting: string;
+  moodList: MoodOptionWithTimestamp[];
+  handleSelectMood: (mood: MoodOptionType) => void;
 };
 
 const AppContext = createContext<AppContextType>({
-  greeting: 'hello',
+  moodList: [],
+  handleSelectMood: () => {},
 });
 
 export const AppProvider: React.FC<React.PropsWithChildren<{}>> = ({
   children,
 }) => {
   return (
-    <AppContext.Provider value={{ greeting: 'hello' }}>
+    <AppContext.Provider value={{ moodList, handleSelectMood }}>
       {children}
     </AppContext.Provider>
   );
