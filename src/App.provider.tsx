@@ -14,6 +14,21 @@ const AppContext = createContext<AppContextType>({
 export const AppProvider: React.FC<React.PropsWithChildren<{}>> = ({
   children,
 }) => {
+  const [moodList, setMoodList] = useState<MoodOptionWithTimestamp[]>([]);
+
+  const handleSelectMood = useCallback(
+    (mood: MoodOptionType, note?: String) => {
+      setMoodList(current => [
+        ...current,
+        {
+          moodOption: mood,
+          timestamp: Date.now(),
+          note: note, // Provide a value for the 'note' property
+        } as MoodOptionWithTimestamp,
+      ]);
+    },
+    [],
+  );
   return (
     <AppContext.Provider value={{ moodList, handleSelectMood }}>
       {children}
