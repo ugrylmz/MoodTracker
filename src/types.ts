@@ -8,6 +8,7 @@ export type MoodOptionWithTimestamp = {
     emoji: string;
     description: string;
   };
+  note: string;
   moodOption: MoodOptionType;
   timestamp: number;
 };
