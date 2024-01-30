@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   View,
   Text,
@@ -19,23 +19,36 @@ const moodOptions: MoodOptionType[] = [
 ];
 
 type MoodPickerProps = {
-  handleSelectMood: (moodOption: MoodOptionType, note?: String) => void;
+  handleSelectMood: (moodOption: MoodOptionType, note?: string) => void;
 };
 
 const MoodPicker: React.FC<MoodPickerProps> = ({ handleSelectMood }) => {
-  const [selectedMood, setSelectedMood] = React.useState<MoodOptionType>();
+  const [selectedMood, setSelectedMood] = useState<MoodOptionType>();
   const [note, setNote] = React.useState<string>();
+  const [hasSelected, setHasSelected] = useState<boolean>(false);
   const textInputRef = React.useRef<TextInput>(null);
   const onSelectMood = useCallback(() => {
     if (selectedMood) {
       handleSelectMood(selectedMood, note);
       setSelectedMood(undefined);
+      setNote(undefined);
+      setHasSelected(true);
     }
   }, [selectedMood, handleSelectMood, note]);
 
   const handleDonePress = () => {
     Keyboard.dismiss();
   };
+
+  if (hasSelected) {
+    return (
+      <View style={styles.container}>
+        <Pressable style={styles.button} onPress={() => setHasSelected(false)}>
+          <Text style={styles.buttonText}>ChooseAnother</Text>
+        </Pressable>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>
@@ -64,10 +77,11 @@ const MoodPicker: React.FC<MoodPickerProps> = ({ handleSelectMood }) => {
         ref={textInputRef}
         value={note}
         style={styles.input}
+        placeholderTextColor={'black'}
         placeholder="Enter your note"
         multiline={true}
         numberOfLines={4}
-        returnKeyType="done" // Set returnKeyType to "done" to show a "Done" button on iOS
+        returnKeyType={'done'}
         onSubmitEditing={handleDonePress} // Call handleDonePress when "Done" button is pressed
         blurOnSubmit={true} // Dismiss keyboard when "Done" button is pressed
         keyboardAppearance={'dark'}
@@ -118,6 +132,7 @@ const styles = StyleSheet.create({
     margin: 10,
     borderRadius: 10,
     padding: 20,
+    backgroundColor: 'rgba(0,0,0,0.2)',
   },
   heading: {
     fontSize: 20,
@@ -125,6 +140,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     textAlign: 'center',
     marginBottom: 20,
+    color: theme.colorWhite,
   },
   button: {
     backgroundColor: theme.colorPurple,
@@ -144,8 +160,9 @@ const styles = StyleSheet.create({
     borderColor: theme.colorPurple,
     borderRadius: 10,
     padding: 10,
-    color: theme.colorPurple,
+    color: '#000',
     marginTop: 10,
+    fontWeight: 'bold',
     height: 60,
   },
 });
