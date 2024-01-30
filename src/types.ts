@@ -4,11 +4,7 @@ export type MoodOptionType = {
 };
 
 export type MoodOptionWithTimestamp = {
-  mood: {
-    emoji: string;
-    description: string;
-  };
+  mood: MoodOptionType;
   note: string;
-  moodOption: MoodOptionType;
   timestamp: number;
 };
