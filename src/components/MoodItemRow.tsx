@@ -13,9 +13,9 @@ const MoodItemRow: React.FC<MoodItemRowProps> = ({ moodItem }) => {
     <View style={styles.container}>
       <View style={styles.moodItem}>
         <View style={styles.iconAndDescription}>
-          <Text style={styles.moodValue}>{moodItem?.moodOption?.emoji} </Text>
+          <Text style={styles.moodValue}>{moodItem?.mood?.emoji} </Text>
           <Text style={styles.moodDescription}>
-            {moodItem?.moodOption?.description}
+            {moodItem?.mood?.description}
           </Text>
         </View>
         <Text style={styles.moodDate}>
