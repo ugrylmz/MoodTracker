@@ -65,3 +65,4 @@ Feel free to contribute to this project. Please ensure that you follow the exist
 ## Author
 
 - Uğur Yılmaz - [ugur@uguryilmaz.dev](mailto:ugur@uguryilmaz.dev)
+- Koray Emre Şenel - [https://www.linkedin.com/in/korayemresenel](https://www.linkedin.com/in/korayemresenel)
