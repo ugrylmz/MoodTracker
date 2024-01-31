@@ -1,22 +1,29 @@
-# React Native Mood Tracker App
+# Mood Tracker App
 
-## Introduction
+This is a simple mobile application for tracking your mood over time. It allows users to select a mood from a predefined list and optionally add notes to each mood entry.
 
-This project is a React Native application developed using TypeScript. It's designed as a mood tracking app, allowing users to log and monitor their moods over time. This README provides an overview of the project's features and instructions for setting up and running the app.
+## New Features
 
-## Features
+- Added swipe-to-delete functionality for mood items in the `MoodItemRow` component.
+- Implemented gesture handling and scrolling functionality in the `History` screen by adding `GestureHandlerRootView` and `ScrollView` components.
+- Added animation to the Save button in the `MoodPicker` component using the `react-native-reanimated` library.
+- Enabled layout animation on Android devices in the `App` component.
+- Added support for adding notes to selected moods in the `MoodPicker` component.
+- Improved tab bar styling and added icons for the Home, History, and Analytics screens in the `BottomTabs.navigator` component.
 
-- **Mood Picker Component**: A feature allowing users to select their mood, implemented in `MoodPicker.tsx`. This component uses emoji representations for different moods and is styled using flexbox for optimal layout.
-  
-- **Bottom Tabs Navigation**: Implemented in `BottomTabs.navigator.tsx`, this feature facilitates navigation between the Home, History, and Analytics screens using a bottom tab navigation pattern.
-  
-- **Home Screen**: The central screen of the app, where users can interact with the Mood Picker component.
-  
-- **History Screen**: A screen that displays the user's mood history.
-  
-- **Analytics Screen**: This screen provides analytical insights into the user's mood trends over time.
-  
-- **App Navigation**: The app includes a `NavigationContainer` and a `BottomTabsNavigator`, enhancing user navigation experience.
+## Screens
+
+### Home Screen
+
+The Home screen displays a background image and allows users to select their current mood from a predefined list.
+
+### History Screen
+
+The History screen shows a list of mood entries, with the most recent entries displayed first. Users can swipe left on a mood item to delete it.
+
+### Analytics Screen
+
+The Analytics screen provides insights and visualizations based on the user's mood data over time.
 
 ## Setup and Installation
 
