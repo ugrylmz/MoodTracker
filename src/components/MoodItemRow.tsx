@@ -22,7 +22,7 @@ type MoodItemRowProps = {
   moodItem: MoodOptionWithTimestamp;
 };
 
-const maxPan = 80;
+const maxPan = -135;
 
 const MoodItemRow: React.FC<MoodItemRowProps> = ({ moodItem }) => {
   const { handleDeleteMood } = useAppContext();
@@ -48,9 +48,11 @@ const MoodItemRow: React.FC<MoodItemRowProps> = ({ moodItem }) => {
       const xVal = Math.floor(event.translationX);
       offset.value = xVal;
 
-      if (Math.abs(xVal) > maxPan) {
-        offset.value = withTiming(Math.sign(offset.value) * 2000, {}, () =>
-          runOnJS(removeWithDelay)(),
+      if (xVal < maxPan) {
+        offset.value = withTiming(Math.sign(offset.value) * 2000, {}, () =>{
+          runOnJS(removeWithDelay)();
+
+        }
         );
       }
     })
