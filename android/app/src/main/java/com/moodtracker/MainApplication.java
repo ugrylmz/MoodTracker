@@ -24,11 +24,6 @@ public class MainApplication extends Application implements ReactApplication {
     }
 
     @Override
-    protected JSIModulePackage getJSIModulePackage() {
-      return new ReanimatedJSIModulePackage(); // <- add
-    }
-
-    @Override
     protected List<ReactPackage> getPackages() {
       @SuppressWarnings("UnnecessaryLocalVariable")
       List<ReactPackage> packages = new PackageList(this).getPackages();
