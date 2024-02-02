@@ -1,8 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import BottomTabsNavigator from './Screens/BottomTabs.navigator';
 import { AppProvider } from './App.provider';
 import { Platform, UIManager } from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
 
 if (Platform.OS === 'android') {
   if (UIManager.setLayoutAnimationEnabledExperimental) {
@@ -11,6 +12,9 @@ if (Platform.OS === 'android') {
 }
 
 const App: React.FC = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   return (
     <AppProvider>
       <NavigationContainer>
