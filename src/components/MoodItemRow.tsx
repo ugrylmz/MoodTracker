@@ -79,9 +79,11 @@ const MoodItemRow: React.FC<MoodItemRowProps> = ({ moodItem }) => {
               <Text style={styles.DeleteText}>Delete</Text>
             </Pressable>
           </View>
-          <Text style={styles.text}>
-            Notes: {moodItem?.note ? moodItem.note : ' '}
-          </Text>
+          {moodItem?.note && (
+            <Text style={styles.text}>
+              Notes: {moodItem?.note ? moodItem.note : ' '}
+            </Text>
+          )}
         </View>
       </Reanimated.View>
     </GestureDetector>
