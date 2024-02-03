@@ -20,7 +20,11 @@ This is a simple mobile application for tracking your mood over time. It allows 
 - Added add note optionally functionality for mood items in the `MoodItemRow` component.
 
 ## Screens
-
+<div style="display: flex; justify-content: space-between;">
+<img src="https://raw.githubusercontent.com/ugrylmz/MoodTracker/main/1.png" style="width: 30%;" />
+<img src="https://raw.githubusercontent.com/ugrylmz/MoodTracker/main/2.png" style="width: 30%;" />
+<img src="https://raw.githubusercontent.com/ugrylmz/MoodTracker/main/3.png" style="width: 30%;"/>
+</div>
 ### Home Screen
 
 The Home screen displays a background image and allows users to select their current mood from a predefined list.
