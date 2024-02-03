@@ -2,14 +2,22 @@
 
 This is a simple mobile application for tracking your mood over time. It allows users to select a mood from a predefined list and optionally add notes to each mood entry.
 
-## New Features
+## All Features
+- using TypeScript with React Native
+- recap on core components and React Hooks
+- bottom navigation
+- JavaScript-only vs native libraries for React Native
+- using React Context to store global app state
+- persisting data across app launches
+- rendering images locally and via url
+- svg's in React Native
+- animations using LayoutAnimation
+- bespoke animations using Reanimated 3
+- adding app icons
+- adding a splash screen
 
-- Added swipe-to-delete functionality for mood items in the `MoodItemRow` component.
-- Implemented gesture handling and scrolling functionality in the `History` screen by adding `GestureHandlerRootView` and `ScrollView` components.
-- Added animation to the Save button in the `MoodPicker` component using the `react-native-reanimated` library.
-- Enabled layout animation on Android devices in the `App` component.
-- Added support for adding notes to selected moods in the `MoodPicker` component.
-- Improved tab bar styling and added icons for the Home, History, and Analytics screens in the `BottomTabs.navigator` component.
+## Changes
+- Added add note optionally functionality for mood items in the `MoodItemRow` component.
 
 ## Screens
 
