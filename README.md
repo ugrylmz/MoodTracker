@@ -18,6 +18,20 @@ This is a simple mobile application for tracking your mood over time. It allows 
 
 ## Changes
 - Added add note optionally functionality for mood items in the `MoodItemRow` component.
+## TO DO:
+-    add a feature to allow the user to edit a mood item
+- group the items in the history tab by day and render the days using a drawer layout
+-    create a component to fade or scale in when an image loaded via url has finished loading
+-    animated header for a scrollable page
+ -   use react-native-haptic-feedback to add a vibration effect when the user selects a mood
+ -   react-native-sound to play a soundtrack in your app that the user can turn on and off
+ -  react-native-push-notification to send a notification to the user at a specific time
+ -  react-native-share to allow the user to share their mood data with others
+ -  auth flow with react-navigation
+ -  react-native-firebase for push notifications
+ -  react-native-firebase for analytics
+ -  react-native-firebase for crashlytics
+ -  react-native-firebase for remote config
 
 ## Screens
 <div style="display: flex; justify-content: space-between;">
